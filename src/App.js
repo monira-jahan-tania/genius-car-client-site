@@ -1,4 +1,3 @@
-
 import './App.css';
 import Header from './Pages/Shared/Header/Header';
 import { Route, Routes } from 'react-router-dom';
@@ -11,6 +10,8 @@ import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
 import Checkout from './Pages/Checkout/Checkout/Checkout';
 import RequireAuth from './Pages/Login/RequireAuth/RequireAuth';
+import AddService from './Pages/AddService/AddService';
+import ManageServices from './Pages/ManageServices/ManageServices';
 
 function App() {
   return (
@@ -27,6 +28,16 @@ function App() {
         <Route path='/checkout' element={
           <RequireAuth>
             <Checkout />
+          </RequireAuth>
+        }></Route>
+        <Route path='/addService' element={
+          <RequireAuth>
+            <AddService />
+          </RequireAuth>
+        }></Route>
+        <Route path='/Manage' element={
+          <RequireAuth>
+            <ManageServices />
           </RequireAuth>
         }></Route>
         <Route path='*' element={<NotFound />}></Route>
